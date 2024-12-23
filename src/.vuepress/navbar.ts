@@ -7,6 +7,6 @@ export default navbar([
   },
   {
     text: "寄语",
-    link: "wishes"
+    link: "messages"
   },
 ]);

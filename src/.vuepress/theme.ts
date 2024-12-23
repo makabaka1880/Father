@@ -5,7 +5,7 @@ import sidebar from "./sidebar.js";
 
 export default hopeTheme({
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "makabaka1880/Father",
 
   docsDir: "src",
 

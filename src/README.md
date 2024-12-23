@@ -11,7 +11,7 @@ actions:
     type: primary
 
   - text: 寄语
-    link: wishes
+    link: messages
   
 features:
 - title: 2024/12/20

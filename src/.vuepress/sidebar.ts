@@ -8,7 +8,7 @@ export default sidebar({
     },
     {
       text: "寄语",
-      link: "wishes"
+      link: "messages"
     },
   ],
 });
