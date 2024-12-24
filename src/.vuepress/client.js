@@ -4,7 +4,6 @@ import MesTOC from './components/MesTOC.vue'
 
 export default defineClientConfig({
   enhance({ app }) {
-    app.component('Messages', Messages);
     app.component('MesTOC', MesTOC);
   },
 })
