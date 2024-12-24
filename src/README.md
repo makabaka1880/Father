@@ -4,7 +4,8 @@ heroText: 李 璟
 heroImage: /assets/Por-Landscape.jpg
 heroFullScreen: true
 tagline: 1972.5.14 - 2024.12.20 享年52岁
-footer: MIT Licensed | Copyright 2024 © Sean Li
+footer: MIT Licensed | Copyright 2024 © Sean Li. 愿爱与记忆永存.
+
 actions:
   - text: 生平
     link: life
@@ -20,7 +21,7 @@ features:
 ---
 
 ::: tip 墓志铭
-我的父亲于2024年12月20日因噎食引发的机械性窒息不幸去世，年仅52岁。他的生命永远定格在那个冬日，但他留给我们的爱与回忆却永远不会褪色。 
+我的父亲于2024年12月20日不幸去世，年仅52岁。由于还未尸检，死亡原因尚不明确，但大概率是噎食导致的机械性窒息。他的生命永远定格在那个冬日，但他留给我们的爱与回忆却永远不会褪色。 
 
 就在父亲去世的前一天，我收到了上海新河湾双鱼的预录取通知。至少在那一刻，他是高兴的，我也会带着这份喜悦和他的期盼继续前行。  
 
