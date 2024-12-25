@@ -7,7 +7,7 @@
         </button>
         <ul v-if="!tocCollapsed">
           <li v-for="(category, index) in organizedMessages" :key="index">
-            <a @click="scrollToSection(index)">{{ category.to }}</a>
+            <a @click="scrollToSection(index)" class="section-link">{{ category.to }}</a>
           </li>
         </ul>
       </div>
@@ -48,20 +48,48 @@
         });
       },
       // Fetch and organize messages
-      async loadMessages() {
+    async loadMessages() {
         try {
-          const query = new AV.Query("Messages");
-          const results = await query.find();
-          this.messages = results.map((item) => ({
-            name: item.get("name"),
-            note: item.get("note"),
-            to: item.get("to"),
-          }));
-          this.organizeMessages();
+            const query = new AV.Query("Messages");
+            query.limit(1); // Fetch one message at a time
+            let skip = 0; // Initialize the skip index
+
+            while (true) {
+            query.skip(skip); // Fetch the next message
+            const results = await query.find();
+
+            if (results.length === 0) break; // Stop if no more messages
+
+            const item = results[0];
+            const message = {
+                name: item.get("name"),
+                note: item.get("note"),
+                to: item.get("to"),
+            };
+
+            this.addMessageToCategory(message); // Add message to the organized structure
+            await this.$nextTick(); // Ensure the DOM updates before continuing
+            skip++; // Move to the next message
+            }
         } catch (error) {
-          console.error("Failed to load messages:", error);
+            console.error("Failed to load messages:", error);
         }
-      },
+        },
+
+        addMessageToCategory(message) {
+        const category = this.organizedMessages.find((cat) => cat.to === message.to);
+
+        if (category) {
+            category.members.push({ name: message.name, note: message.note });
+        } else {
+            this.organizedMessages.push({
+            to: message.to,
+            members: [{ name: message.name, note: message.note }],
+            });
+        }
+        },
+
+
       // Organize messages into the desired structure
       organizeMessages() {
         const grouped = {};
@@ -95,12 +123,23 @@
   /* Styling for the TOC */
   .toc {
     background: #f5f5f5;
-    padding: 10px;
-    /* border-bottom: 1px solid #ddd; */
     border-radius: 10px;
+    padding: 10px;
     position: sticky;
     top: 0;
     z-index: 1000;
+  }
+
+  .section-link {
+    color: #666;
+  }
+
+  .section-link:hover {
+    color: #444;
+  }
+ 
+  a {
+    text-decoration-line: none;
   }
   
   .toc.collapsed ul {
@@ -108,26 +147,21 @@
   }
   
   .toggle-toc {
-    background: #007bff;
-    color: #fff;
+    color: #000;
     border: none;
-    padding: 5px 10px;
+    background: none;
+    padding: 10px 10px 0px 10px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
     margin-bottom: 10px;
   }
   
-  .toggle-toc:hover {
-    background: #0056b3;
-  }
   
   /* Styling for individual message categories */
   .message-category {
     margin: 20px 0;
     padding: 10px;
-    /* border: 1px solid #ddd; */
-    border-radius: 5px;
-    background: #fff;
   }
   
   .message-category h2 {
@@ -140,9 +174,6 @@
   .message-member {
     margin: 10px 0;
     padding: 10px;
-    /* border: 1px solid #eee; */
-    border-radius: 5px;
-    /* background: #fafafa; */
   }
   
   .message-member h3 {
