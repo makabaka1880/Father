@@ -3,7 +3,7 @@ home: true
 heroText: 李 璟
 heroImage: /assets/Por-Landscape.jpg
 heroFullScreen: true
-tagline: 1972.5.14 - 2024.12.20 享年52岁
+tagline: 在一个和平时一样的清晨，有的人留在了昨天。
 footer: MIT Licensed | Copyright 2024 © Sean Li. 愿爱与记忆永存.
 
 actions:
