@@ -96,7 +96,8 @@
   .toc {
     background: #f5f5f5;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
+    border-radius: 10px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -124,7 +125,7 @@
   .message-category {
     margin: 20px 0;
     padding: 10px;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     border-radius: 5px;
     background: #fff;
   }
@@ -139,9 +140,9 @@
   .message-member {
     margin: 10px 0;
     padding: 10px;
-    border: 1px solid #eee;
+    /* border: 1px solid #eee; */
     border-radius: 5px;
-    background: #fafafa;
+    /* background: #fafafa; */
   }
   
   .message-member h3 {
