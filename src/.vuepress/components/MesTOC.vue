@@ -1,30 +1,31 @@
 <template>
   <div>
     <!-- 顶部目录 -->
-    <nav class="toc-top">
-      <button
-        @click="toggleToc"
-        style="background: #0066cc; color: #fff; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px; margin-right: 16px;"
-      >
-        {{ tocCollapsed ? '展开' : '收起' }}
-      </button>
-      <ul v-show="!tocCollapsed" style="display: inline; margin: 0; padding: 0; list-style: none;">
-        <li
-          v-for="(section, index) in messages"
-          :key="index"
-          style="margin-right: 16px; padding: 8px;"
+      <nav class="toc-top">
+        <div style="padding-left: 10px; padding-bottom: 10px;">
+        <button
+          @click="toggleToc"
+          style="background: #0066cc; color: #fff; border: none; padding: 10px; cursor: pointer; border-radius: 4px; margin-right: 16px;"
         >
-          <a
-            :href="'#section-' + index"
-            @click.prevent="scrollToSection(index)"
-            style="text-decoration: none; color: #0066cc;"
+          {{ tocCollapsed ? '展开' : '收起' }}
+        </button>
+      </div>
+        <ul v-show="!tocCollapsed" style="display: inline; margin: 0; padding: 0; list-style: none;">
+          <li
+            v-for="(section, index) in messages"
+            :key="index"
+            style="margin-right: 16px; padding: 8px;"
           >
-            {{ section.to }}
-          </a>
-        </li>
-      </ul>
-    </nav>
-
+            <a
+              :href="'#section-' + index"
+              @click.prevent="scrollToSection(index)"
+              style="text-decoration: none; color: #0066cc;"
+            >
+              {{ section.to }}
+            </a>
+          </li>
+        </ul>
+      </nav>
     <!-- 内容部分 -->
     <div class="content">
       <div
@@ -83,10 +84,12 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
+  padding-top: 10px;
   background: #f9f9f9;
-  padding: 16px;
+  border-radius: 10px;
   z-index: 1000;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
 h2 {

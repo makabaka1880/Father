@@ -1,4 +1,5 @@
 import { defineUserConfig } from "vuepress";
+import { noticePlugin } from '@vuepress/plugin-notice'
 
 import theme from "./theme.js";
 
@@ -10,7 +11,6 @@ export default defineUserConfig({
   description: "李璟的数字墓碑",
 
   theme,
-
   // 和 PWA 一起启用
   // shouldPrefetch: false,
 });
