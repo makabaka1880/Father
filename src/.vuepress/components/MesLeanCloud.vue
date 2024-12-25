@@ -44,7 +44,7 @@
         AV.init({
           appId: "G8RpvOvXUXBg6gDeSX4QMCh7-MdYXbMMI", // Replace with your App ID
           appKey: "KIeFjTPSuv7zGnsrPtoSGgHK", // Replace with your App Key
-          serverURL: "https://g8rpvovx.api.lncldglobal.com", // Replace with your Server URL
+          serverURL: "http://backend.jamesli.love", // Replace with your Server URL
         });
       },
       // Fetch and organize messages
