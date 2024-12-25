@@ -1,6 +1,7 @@
 import { defineClientConfig } from 'vuepress/client'
 import MesTOC from './components/MesTOC.vue'
 import Life from './components/Life.vue'
+import MesLeanCloud from './components/MesLeanCloud.vue'
 // import Scene3D from './components/Scene3D.vue'
 
 export default defineClientConfig({
@@ -8,5 +9,6 @@ export default defineClientConfig({
     app.component('MesTOC', MesTOC);
     app.component('Life', Life);
     // app.component('Scene3D'), Scene3D
+    app.component('MesLeanCloud', MesLeanCloud)
   },
 })

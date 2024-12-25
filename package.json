@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "@vuepress/plugin-register-components": "^1.9.10",
+    "axios": "^1.7.9",
     "dayjs": "^1.11.13",
+    "leancloud-storage": "^4.15.2",
     "three": "^0.134.0",
     "troisjs": "^0.3.4",
     "vue-3d-model": "^1.4.1"
